@@ -1,3 +1,4 @@
+import { namePatternRegex } from "./helpers/regexPatterns.js";
 import { styled } from "styled-components";
 
 export default function ContactForm() {
@@ -5,10 +6,16 @@ export default function ContactForm() {
     <Form>
       <fieldset>
         <legend>Contact Me</legend>
-        <label for="name" />
+        <label for="givenName" >Given Name:</label>
         <input
-          id="name"
-          // pattern={}
+          id="givenName"
+          pattern={namePatternRegex}
+          value=""
+        />
+        <label for="surname" >Surname:</label>
+        <input
+          id="surname"
+          pattern={namePatternRegex}
           value=""
         />
       </fieldset>
